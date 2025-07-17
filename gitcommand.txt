@@ -102,6 +102,12 @@ git commit -m 解决冲突之后的代码
 git log --oneline 
 git log --oneline --graph
 
+拉取所有的远程仓库，github手动创建summer分支
+git fetch 
+查看所有分支
+git branch -av
+提交并删除远程分支
+git push origin --delete summer(该分支已经合并到主分支了)
 
 
 
