@@ -1,0 +1,108 @@
+git init
+
+git add .
+
+git commit -m 第一次上传
+
+git remote add origin https://github.com/651862883/test_db.git
+
+git remote remove origin
+
+
+git push -u origin master
+
+
+git status 查看状态
+
+git log 查看提交记录
+git log --author='zhangjun'
+
+配置用户名和邮箱
+git config --global user.name 'lisi'
+git config --global  user.email '651862883@qq.com'
+git config --global --list 查看配置
+
+命令行删除文件
+git rm demo3.html
+
+
+命令行修改文件名
+git mv home.html  demo2.html
+
+
+查看文件的日志
+git log --pretty=oneline home/demo.html
+git show xxxxxx
+
+查看文件修改具体内容
+git log -p home/demo.html
+
+查看不同文件
+git diff
+
+还原文件 ,还没有git add
+git checkout -- demo.html 
+
+已经加入到了暂存区 ，git add
+git reset HEAD demo.html      撤销加入到了暂存区，git status 变成红色
+
+回到上一个版本^,上2个版本^^
+git reset --hard HEAD^
+
+回滚到某一个版本
+git reset --hard 385ed29efc50dac8e8153e035b670ad6e82f402d（git log 中commitid）
+
+回滚某一文件到某一版本
+git checkout 385ed29efc50dac8（git log 中commitid）-- version.html
+
+创建标签
+git tag v1.0
+查看标签
+git tag
+设置某一个commit 的tag
+git tag v0.5 385ed29efc50dac8e8153e035b670ad6e82f402d（git log 中commitid）
+删除标签
+git tag -d v0.5
+推送标签到远程仓库
+git push origin v1.0
+
+创建分支dev
+git branch dev 
+查看分支
+git branch
+切换分支 dev
+git checkout dev
+删除分支test,不能删除当前所在的分支
+git branch -d test
+git branch -D test (D强制删除)
+创建并且切换分支
+git checkout -b test
+
+
+合并分支到master：
+1. dev 分支 
+git add .
+git commit -m xxxxxx
+2. 切换分支
+git checkout master
+3.合并分支
+git merge dev
+
+
+当git merge(git checkout master,只能在主分支合并)，合并解决冲突：
+1.保留当前分支的代码，忽略其他分支
+git merge --abort 
+2. 手动修改，删除特殊符号
+git add .
+git commit
+git commit -m 解决冲突之后的代码
+
+
+查看版本路线
+git log --oneline 
+git log --oneline --graph
+
+
+
+
+
